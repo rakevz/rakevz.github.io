@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cálculo de Salario</title>
+</head>
+<body>
+    <header>
+        <h1>Cálculo de Salario</h1>
+    </header>
+    
+    <main>
+        <section id="calculator">
+            <form id="salary-form">
+                <label for="basic-salary">Salario Básico Mensual:</label>
+                <input type="number" id="basic-salary" required>
+
+                <label for="extra-hours-diurna">Horas Extras Diurnas:</label>
+                <input type="number" id="extra-hours-diurna" value="0">
+
+                <label for="extra-hours-nocturna">Horas Extras Nocturnas:</label>
+                <input type="number" id="extra-hours-nocturna" value="0">
+
+                <label for="extra-hours-festiva">Horas Extras Festivas:</label>
+                <input type="number" id="extra-hours-festiva" value="0">
+
+                <label for="extra-hours-dominical">Horas Extras Dominicales:</label>
+                <input type="number" id="extra-hours-dominical" value="0">
+
+                <label for="days-missed">Días Faltantes:</label>
+                <input type="number" id="days-missed" min="0" max="30" value="0">
+
+                <button type="submit">Calcular Salario</button>
+            </form>
+
+            <div id="result" class="result" style="display: none;">
+                <h2>Resultados</h2>
+                <p id="basic-salary-result">Salario Básico: $<span></span></p>
+                <p id="extra-income-result">Total Ingresos por Horas Extras: $<span></span></p>
+                <p id="discounts-result">Descuentos: $<span></span></p>
+                <p id="total-pay-result" class="total-pay">Total a Pagar: $<span></span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cálculo salario. Todos los derechos reservados rakevz.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

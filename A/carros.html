@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/stylescarros.css">
+    <title>Alquiler de Carros</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Alquiler de Carros</h1>
+        <nav>
+            <ul>
+                <button onclick="window.location.href='index.html'">Volver al Índice</button>
+                <li><a href="nomina.html">Nómina</a></li>
+                <li><a href="perros.html">Perros</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="carros">
+            <h2>Alquiler de Carros</h2>
+            <form id="rental-form">
+                <label for="car-type">Seleccione un carro:</label>
+                <select id="car-type" name="car-type">
+                    <option value="bmw">BMW Azul</option>
+                    <option value="mercedes">Mercedes Negro</option>
+                    <option value="twingo">Twingo Verde</option>
+                    <option value="megane">Megane Rojo</option>
+                    <option value="chevrolet">Chevrolet Gris</option>
+                </select>
+
+                <label for="rental-days">Días de alquiler:</label>
+                <input type="number" id="rental-days" name="rental-days" min="1" required>
+
+                <button type="submit">Calcular Precio</button>
+            </form>
+
+            <div id="car-image" style="margin-top: 20px; display: none;">
+                <img id="selected-car-image" src="" alt="Carro Seleccionado" style="width: 50%; height: auto;">
+            </div>
+            <div id="result" class="result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alquiler de Carros. Todos los derechos reservados rakevz.</p>
+    </footer>
+
+    <script>
+        document.getElementById('rental-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const carType = document.getElementById('car-type').value;
+            const rentalDays = parseInt(document.getElementById('rental-days').value);
+            let price = 0;
+
+            if (rentalDays === 1 || rentalDays === 2) {
+                price = rentalDays * 50; 
+                document.getElementById('result').style.backgroundColor = 'orange';
+            } else if (rentalDays >= 3 && rentalDays <= 5) {
+                price = rentalDays * 40; 
+                document.getElementById('result').style.backgroundColor = 'yellow';
+            } else if (rentalDays >= 6 && rentalDays <= 10) {
+                price = rentalDays * 30; 
+                document.getElementById('result').style.backgroundColor = 'green';
+            } else {
+                price = rentalDays * 20; 
+                document.getElementById('result').style.backgroundColor = 'blue';
+            }
+
+            const carNames = {
+                bmw: 'BMW Azul',
+                mercedes: 'Mercedes Negro',
+                twingo: 'Twingo Verde',
+                megane: 'Megane Rojo',
+                chevrolet: 'Chevrolet Gris'
+            };
+
+            const carImages = {
+                bmw: 'recursos/imagenes-carros/bmwazul.png',
+                mercedes: 'recursos/imagenes-carros/mercedesnegro.png',
+                twingo: 'recursos/imagenes-carros/twingoverde.png',
+                megane: 'recursos/imagenes-carros/meganerojo.png',
+                chevrolet: 'recursos/imagenes-carros/chevroletgris.png'
+            };
+
+            document.getElementById('result').innerHTML = `Total a pagar: $${price}`;
+            document.getElementById('selected-car-image').src = carImages[carType]; 
+            document.getElementById('car-image').style.display = 'block'; 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/stylesnomina.css"> 
+    <title>Nómina</title>
+</head>
+<body>
+    <header>
+        <h1>Nómina</h1>
+        <nav>
+            <ul>
+                <button onclick="window.location.href='index.html'">Volver al Índice</button>
+                <li><a href="perros.html">Perros</a></li>
+                <li><a href="carros.html">Carros</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Calculadora de Nómina</h2>
+            <form id="nomina-form">
+                <label for="nombre">Nombre del Empleado:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="horas">Horas Trabajadas:</label>
+                <input type="number" id="horas" name="horas" required>
+
+                <label for="tarifa">Tarifa por Hora:</label>
+                <input type="number" id="tarifa" name="tarifa" required>
+
+                <button type="submit">Calcular Salario</button>
+            </form>
+
+            <div class="result" id="resultado"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados rakevz.</p>
+    </footer>
+
+    <script>
+        document.getElementById('nomina-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const horas = parseFloat(document.getElementById('horas').value);
+            const tarifa = parseFloat(document.getElementById('tarifa').value);
+            const salario = horas * tarifa;
+
+            if (!isNaN(salario)) {
+                document.getElementById('resultado').innerText = `El salario es: $${salario.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, ingresa valores válidos.";
+            }
+        }
+    )
+
+    </script>
+</body>
+</html>

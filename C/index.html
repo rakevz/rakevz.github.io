@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competencia de Perros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Competencia de Perros</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form id="competitionForm">
+                <label for="firstPlace">Puesto 1 (Raza):</label>
+                <input type="text" id="firstPlace" required>
+                
+                <label for="secondPlace">Puesto 2 (Raza):</label>
+                <input type="text" id="secondPlace" required>
+                
+                <label for="thirdPlace">Puesto 3 (Raza):</label>
+                <input type="text" id="thirdPlace" required>
+                
+                <button type="submit">Mostrar Resultados</button>
+            </form>
+        </div>
+
+        <div id="results" class="results-container">
+            <div class="dog" id="firstDog">
+                <h2>Puesto 1</h2>
+                <img src="perro1.jpg" alt="Perro Ganador 1">
+                <p>Raza: <span id="firstBreed"></span></p>
+                <p>Precio: $<span id="firstPrice"></span></p>
+            </div>
+            <div class="dog" id="secondDog">
+                <h2>Puesto 2</h2>
+                <img src="perro2.jpg" alt="Perro Ganador 2">
+                <p>Raza: <span id="secondBreed"></span></p>
+                <p>Precio: $<span id="secondPrice"></span></p>
+            </div>
+            <div class="dog" id="thirdDog">
+                <h2>Puesto 3</h2>
+                <img src="perro3.jpg" alt="Perro Ganador 3">
+                <p>Raza: <span id="thirdBreed"></span></p>
+                <p>Precio: $<span id="thirdPrice"></span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Competencia de Perros</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .ganador {
+            background-color: yellow;
+            color: rgb(0, 255, 0);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .perdedor {
+            background-color: red;
+            color: black;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Juego de Preguntas</h1>
+    <p>¿Cuál es la capital de Francia?</p>
+    <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+    <button onclick="verificarRespuesta()">Enviar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarRespuesta() {
+            const respuestaUsuario = document.getElementById('respuesta').value.trim().toLowerCase();
+            const respuestaCorrecta = 'parís'; 
+
+            // Limpiar resultado anterior
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.className = ''; // Limpiar clases anteriores
+            resultadoDiv.innerHTML = ''; // Limpiar contenido anterior
+
+            if (respuestaUsuario === respuestaCorrecta) {
+                resultadoDiv.classList.add("ganador");
+                resultadoDiv.innerHTML = "¡Eres el ganador!";
+            } else {
+                resultadoDiv.classList.add("perdedor");
+                resultadoDiv.innerHTML = "Lo siento, has perdido.";
+            }
+        }
+    </script>
+
+</body>
+</html>
