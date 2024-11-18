@@ -4,49 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Cálculo de Salario</title>
+    <title>Valor de Perro</title>
 </head>
 <body>
     <header>
-        <h1>Cálculo de Salario</h1>
+        <h1>Calcular Valor de Perro</h1>
     </header>
     
     <main>
         <section id="calculator">
-            <form id="salary-form">
-                <label for="basic-salary">Salario Básico Mensual:</label>
-                <input type="number" id="basic-salary" required>
+            <form id="competitionForm">
+                <label for="breed">Seleccione la raza del perro:</label>
+                <select id="breed" required>
+                    <option value="" disabled selected>Seleccione una raza</option>
+                    <option value="PITBULL">PITBULL</option>
+                    <option value="BULY">BULY</option>
+                    <option value="ROTTWHILLER">ROTTWHILLER</option>
+                    <option value="LABRADOR RETRIEVER">LABRADOR RETRIEVER</option>
+                    <option value="GOLDEN RETRIEVER">GOLDEN RETRIEVER</option>
+                    <option value="DOBERMAN">DOBERMAN</option>
+                    <option value="DOGO ARGENTINO">DOGO ARGENTINO</option>
+                </select>
 
-                <label for="extra-hours-diurna">Horas Extras Diurnas:</label>
-                <input type="number" id="extra-hours-diurna" value="0">
+                <label for="position">Seleccione el puesto obtenido:</label>
+                <select id="position" required>
+                    <option value="" disabled selected>Seleccione un puesto</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
 
-                <label for="extra-hours-nocturna">Horas Extras Nocturnas:</label>
-                <input type="number" id="extra-hours-nocturna" value="0">
-
-                <label for="extra-hours-festiva">Horas Extras Festivas:</label>
-                <input type="number" id="extra-hours-festiva" value="0">
-
-                <label for="extra-hours-dominical">Horas Extras Dominicales:</label>
-                <input type="number" id="extra-hours-dominical" value="0">
-
-                <label for="days-missed">Días Faltantes:</label>
-                <input type="number" id="days-missed" min="0" max="30" value="0">
-
-                <button type="submit">Calcular Salario</button>
+                <button type="submit">Calcular Valor</button>
             </form>
 
-            <div id="result" class="result" style="display: none;">
+            <div id="result" style="display: none;">
                 <h2>Resultados</h2>
-                <p id="basic-salary-result">Salario Básico: $<span></span></p>
-                <p id="extra-income-result">Total Ingresos por Horas Extras: $<span></span></p>
-                <p id="discounts-result">Descuentos: $<span></span></p>
-                <p id="total-pay-result" class="total-pay">Total a Pagar: $<span></span></p>
+                <p>RAZA: <span id="breedResult"></span></p>
+                <img id="resultImage" src="" alt="Imagen del resultado" style="display: none; width: 200px; height: auto;"/>
+                <p>VALOR DEL ANIMAL: $<span id="initialValue"></span></p>
+                <p>PUESTO OBTENIDO: <span id="positionResult"></span></p>
+                <p>NUEVO VALOR: $<span id="newValue"></span></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Cálculo salario. Todos los derechos reservados rakevz.</p>
+        <p>&copy; 2024 Valor de Perro. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>

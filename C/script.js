@@ -1,19 +1,53 @@
 document.getElementById('competitionForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const firstBreed = document.getElementById('firstPlace').value;
-    const secondBreed = document.getElementById('secondPlace').value;
-    const thirdBreed = document.getElementById('thirdPlace').value;
+    const raza = document.getElementById('breed').value;
+    let valorInicial;
+    let imagenRaza;
 
-    const firstPrice = 1000;
-    const secondPrice = 800; 
-    const thirdPrice = 500;   
+    if (raza === "PITBULL") {
+        valorInicial = 6000000;
+        imagenRaza = 'imagenes-perros/pitbull.jpg'; 
+    } else if (raza === "BULY") {
+        valorInicial = 6500000;
+        imagenRaza = 'imagenes-perros/american-bully.jpeg'; 
+    } else if (raza === "ROTTWHILLER") {
+        valorInicial = 4000000;
+        imagenRaza = 'imagenes-perros/rottweiler.jpg'; 
+    } else if (raza === "LABRADOR RETRIEVER") {
+        valorInicial = 3500000;
+        imagenRaza = 'imagenes-perros/labradoretriever.png'; 
+    } else if (raza === "GOLDEN RETRIEVER") {
+        valorInicial = 3500000;
+        imagenRaza = 'imagenes-perros/goldenretriever.png'; 
+    } else if (raza === "DOBERMAN") {
+        valorInicial = 5000000;
+        imagenRaza = 'imagenes-perros/doberman.jpg'; 
+    } else if (raza === "DOGO ARGENTINO") {
+        valorInicial = 5500000;
+        imagenRaza = 'imagenes-perros/dogo.webp'; 
+    } else {
+        valorInicial = 0; 
+    }
 
-    document.getElementById('firstBreed').textContent = firstBreed;
-    document.getElementById('secondBreed').textContent = secondBreed;
-    document.getElementById('thirdBreed').textContent = thirdBreed;
+    const puesto = parseInt(document.getElementById('position').value);
+    let nuevoValor;
 
-    document.getElementById('firstPrice').textContent = firstPrice;
-    document.getElementById('secondPrice').textContent = secondPrice;
-    document.getElementById('thirdPrice').textContent = thirdPrice;
+    if (puesto === 1) {
+        nuevoValor = valorInicial * 2;
+    } else if (puesto === 2) {
+        nuevoValor = valorInicial + 800000;
+    } else if (puesto === 3) {
+        nuevoValor = valorInicial + 200000;
+    } else {
+        nuevoValor = valorInicial;
+    }
+
+    document.getElementById('breedResult').textContent = raza;
+    document.getElementById('initialValue').textContent = valorInicial.toLocaleString();
+    document.getElementById('positionResult').textContent = puesto;
+    document.getElementById('newValue').textContent = nuevoValor.toLocaleString();
+    document.getElementById('resultImage').src = imagenRaza;
+    document.getElementById('resultImage').style.display = 'block';
+    document.getElementById('result').style.display = 'block';
 });

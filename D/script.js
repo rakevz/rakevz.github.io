@@ -8,12 +8,12 @@ function calcularCosto() {
 
     // Cálculo del costo basado en el total de minutos
     if (totalMinutos <= 180) {
-        costo = 2000; // Costo mínimo en COP
+        costo = 2000; // Costo mínimo 
     } else if (totalMinutos < 1440) {
         const horasFacturables = Math.ceil((totalMinutos - 180) / 60); // Horas adicionales después de las 3 horas
-        costo = 2000 + (horasFacturables * 1500); // Costo adicional por hora extra en COP
+        costo = 2000 + (horasFacturables * 1500); // Costo adicional por hora extra
     } else {
-        costo = 10000; // Costo máximo en COP
+        costo = 10000; // Costo máximo
     }
 
     document.getElementById('resultado').innerHTML = `El costo total es: ${costo} COP`;
