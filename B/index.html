@@ -4,52 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Valor de Perro</title>
+    <title>Cálculo de Salario</title>
 </head>
 <body>
     <header>
-        <h1>Calcular Valor de Perro</h1>
+        <h1>Cálculo de Salario</h1>
     </header>
     
     <main>
-        <section id="calculator">
-            <form id="competitionForm">
-                <label for="breed">Seleccione la raza del perro:</label>
-                <select id="breed" required>
-                    <option value="" disabled selected>Seleccione una raza</option>
-                    <option value="PITBULL">PITBULL</option>
-                    <option value="BULY">BULY</option>
-                    <option value="ROTTWHILLER">ROTTWHILLER</option>
-                    <option value="LABRADOR RETRIEVER">LABRADOR RETRIEVER</option>
-                    <option value="GOLDEN RETRIEVER">GOLDEN RETRIEVER</option>
-                    <option value="DOBERMAN">DOBERMAN</option>
-                    <option value="DOGO ARGENTINO">DOGO ARGENTINO</option>
-                </select>
+        <section id="salary-calculator">
+            <form id="salary-form">
+                <label for="salario-basico">Salario Básico:</label>
+                <input type="number" id="salario-basico" required placeholder="Ingrese el salario básico" step="0.01">
 
-                <label for="position">Seleccione el puesto obtenido:</label>
-                <select id="position" required>
-                    <option value="" disabled selected>Seleccione un puesto</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
+                <label for="horas-extras-diurnas">Horas Extras Diurnas:</label>
+                <input type="number" id="horas-extras-diurnas" required placeholder="Ingrese horas extras diurnas" step="0">
 
-                <button type="submit">Calcular Valor</button>
+                <label for="horas-extras-nocturnas">Horas Extras Nocturnas:</label>
+                <input type="number" id="horas-extras-nocturnas" required placeholder="Ingrese horas extras nocturnas" step="0">
+
+                <label for="horas-extras-festivas">Horas Extras Festivas:</label>
+                <input type="number" id="horas-extras-festivas" required placeholder="Ingrese horas extras festivas" step="0">
+
+                <label for="horas-extras-dominicales">Horas Extras Dominicales:</label>
+                <input type="number" id="horas-extras-dominicales" required placeholder="Ingrese horas extras dominicales" step="0">
+
+                <label for="dias-faltados">Días Faltados:</label>
+                <input type="number" id="dias-faltados" required placeholder="Ingrese días faltados" step="0">
+
+                <button type="submit">Calcular Salario</button>
             </form>
 
             <div id="result" style="display: none;">
                 <h2>Resultados</h2>
-                <p>RAZA: <span id="breedResult"></span></p>
-                <img id="resultImage" src="" alt="Imagen del resultado" style="display: none; width: 200px; height: auto;"/>
-                <p>VALOR DEL ANIMAL: $<span id="initialValue"></span></p>
-                <p>PUESTO OBTENIDO: <span id="positionResult"></span></p>
-                <p>NUEVO VALOR: $<span id="newValue"></span></p>
+                <p>Salario Básico: $<span id="salario-basico-result"><span></p>
+                <p>Total Ingresos por Horas Extras: $<span id="total-ingresos-horas-extras-result"><span></p>
+                <p>Descuento Salud: $<span id="descuento-salud-result"><span></p>
+                <p>Descuento Pensión: $<span id="descuento-pension-result"><span></p>
+                <p>Total a Pagar: $<span id="total-a-pagar-result"><span></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Valor de Perro. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Cálculo de Salario. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
