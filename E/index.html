@@ -26,17 +26,34 @@
 </head>
 <body>
 
-    <h1>Juego de Preguntas</h1>
-    <p>¿Cuál es la capital de Francia?</p>
+    <h1>¿Colon descubrió América? (si/no)</h1>
     <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
     <button onclick="verificarRespuesta()">Enviar</button>
 
     <div id="resultado"></div>
 
+    <hr>
+
+    <h1>¿La independencia de México fue en el año 1810? (si/no)</h1>
+    <input type="text" id="respuesta2" placeholder="Escribe tu respuesta aquí">
+    <button onclick="verificarRespuesta2()">Enviar</button>
+
+    <div id="resultado2"></div>
+
+    <hr>
+
+    <h1>¿The Doors fue un grupo de rock Americano? (si/no)</h1>
+    <input type="text" id="respuesta3" placeholder="Escribe tu respuesta aquí">
+    <button onclick="verificarRespuesta3()">Enviar</button>
+
+    <div id="resultado3"></div>
+
+    <hr>
+
     <script>
         function verificarRespuesta() {
             const respuestaUsuario = document.getElementById('respuesta').value.trim().toLowerCase();
-            const respuestaCorrecta = 'parís'; 
+            const respuestaCorrecta = 'si'; 
 
             // Limpiar resultado anterior
             const resultadoDiv = document.getElementById('resultado');
@@ -51,7 +68,51 @@
                 resultadoDiv.innerHTML = "Lo siento, has perdido.";
             }
         }
+
+
+        function verificarRespuesta2() {
+            const respuestaUsuario = document.getElementById('respuesta2').value.trim().toLowerCase();
+            const respuestaCorrecta = 'si'; 
+
+            // Limpiar resultado anterior
+            const resultadoDiv = document.getElementById('resultado2');
+            resultadoDiv.className = ''; 
+            resultadoDiv.innerHTML = '';
+
+            if (respuestaUsuario === respuestaCorrecta) {
+                resultadoDiv.classList.add("ganador");
+                resultadoDiv.innerHTML = "¡Eres el ganador!";
+            } else {
+                resultadoDiv.classList.add("perdedor");
+                resultadoDiv.innerHTML = "Lo siento, has perdido.";
+            }
+        }
+
+
+        function verificarRespuesta3() {
+            const respuestaUsuario = document.getElementById('respuesta3').value.trim().toLowerCase();
+            const respuestaCorrecta = 'si'; 
+
+            // Limpiar resultado anterior
+            const resultadoDiv = document.getElementById('resultado3');
+            resultadoDiv.className = ''; 
+            resultadoDiv.innerHTML = '';
+
+            if (respuestaUsuario === respuestaCorrecta) {
+                resultadoDiv.classList.add("ganador");
+                resultadoDiv.innerHTML = "¡Eres el ganador!";
+            } else {
+                resultadoDiv.classList.add("perdedor");
+                resultadoDiv.innerHTML = "Lo siento, has perdido.";
+            }
+        }
+
     </script>
+
+
+
+
+
 
 </body>
 </html>
